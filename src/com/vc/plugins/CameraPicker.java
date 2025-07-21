@@ -10,17 +10,22 @@ import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraAccessException;
 import android.widget.Toast;
 
+import java.io.File;
+
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 
 public class CameraPicker extends CordovaPlugin {
 
+    private CallbackContext callbackContext;
+
     private static final int CAMERA_REQUEST_CODE = 1001;
     private static final int IMAGE_PICKER_REQUEST_CODE = 1002;
 
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
+        this.callbackContext = callbackContext;
         if (action.equals("captureImage")) {
             captureImage(callbackContext);
             return true;
@@ -81,13 +86,13 @@ public class CameraPicker extends CordovaPlugin {
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == CAMERA_REQUEST_CODE && intent != null) {
                 Uri imageUri = intent.getData();
-                callbackContext.success(imageUri.toString());
+                this.callbackContext.success(imageUri.toString());
             } else if (requestCode == IMAGE_PICKER_REQUEST_CODE && intent != null) {
                 Uri selectedImage = intent.getData();
-                callbackContext.success(selectedImage.toString());
+                this.callbackContext.success(selectedImage.toString());
             }
         } else {
-            callbackContext.error("Operation failed or canceled");
+            this.callbackContext.error("Operation failed or canceled");
         }
     }
 }
