@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-camera-picker",
+  "version": "1.0.0",
+  "description": "A Cordova plugin to capture photo or pick image with the Android Photo Picker API",
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "camera",
+    "photo",
+    "picker",
+    "image"
+  ],
+  "author": "@vishwalaya",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cordova-android": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vishwalaya-creations/cordova-plugin-camera-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vishwalaya-creations/cordova-plugin-camera-picker/issues"
+  },
+  "homepage": "https://github.com/vishwalaya-creations/cordova-plugin-camera-picker"
+}
