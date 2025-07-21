@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-plugin-camera-picker" version="1.0.0" xmlns="http://apache.org/ns/plugins">
+    <name>CameraPicker</name>
+    <description>Capture photo or pick an image with the Android Photo Picker API</description>
+    <license>Apache 2.0</license>
+    <js-module src="www/cameraPicker.js" name="CameraPicker">
+        <clobbers target="cordova.plugins.cameraPicker" />
+    </js-module>
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+        <source-file src="src/android/CameraPicker.java" target-dir="src/com/example/camerapicker" />
+    </platform>
+</plugin>
