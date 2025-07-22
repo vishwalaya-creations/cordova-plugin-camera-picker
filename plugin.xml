@@ -7,8 +7,12 @@
         <clobbers target="cordova.plugins.cameraPicker" />
     </js-module>
     <platform name="android">
+    <source-file src="src/android/CameraPicker.java" target-dir="src/com/vc/plugins/" />
+    <config-file target="app/build.gradle" parent="dependencies">
+        <dependency type="gradle" lib="androidx.camera:camera-camera2:1.0.0" />
+    </config-file>
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Camera">
+            <feature name="CameraLauncher">
                 <param name="android-package" value="com.vc.plugins.CameraLauncher"/>
             </feature>
         </config-file>
@@ -17,6 +21,14 @@
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
-        <source-file src="src/android/CameraPicker.java" target-dir="src/com/vc/plugins/" />
+         <preference name="android-minSdkVersion" value="24" />
+         <!-- Add Gradle dependencies if needed -->
+    <framework src="com.android.support:support-v4:27.1.1" />
+    <framework src="com.android.support:appcompat-v7:27.1.1" />
+
+    <!-- If you require a specific API like camera2 -->
+    <framework src="androidx.camera:camera-camera2:1.0.0" />
+    <framework src="androidx.camera:camera-lifecycle:1.0.0" />
+    
     </platform>
 </plugin>
