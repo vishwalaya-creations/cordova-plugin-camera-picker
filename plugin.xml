@@ -12,11 +12,6 @@
     <config-file target="app/build.gradle" parent="dependencies">
         <dependency type="gradle" lib="androidx.camera:camera-camera2:1.0.0" />
     </config-file>
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="CameraLauncher">
-                <param name="android-package" value="com.vc.plugins.CameraLauncher"/>
-            </feature>
-        </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.CAMERA" />
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
