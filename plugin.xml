@@ -7,6 +7,7 @@
         <clobbers target="cordova.plugins.cameraPicker" />
     </js-module>
     <platform name="android">
+    <preference name="android-minSdkVersion" value="24" />
     <source-file src="src/android/CameraPicker.java" target-dir="src/com/vc/plugins/" />
     <config-file target="app/build.gradle" parent="dependencies">
         <dependency type="gradle" lib="androidx.camera:camera-camera2:1.0.0" />
